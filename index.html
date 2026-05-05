@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">   
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resealed Clothes</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav id="navbar" class="navbar">
+    <ul>
+      <li><i class="fa-solid fa-bars" id="menu_icon"></i></li>
+      <li><a href="#" class="nav-hid">Menu</a></li>
+      <li><i class="fa-solid fa-magnifying-glass" id="search_icon"></i></li>
+      <li><a href="#" class="nav-hid">Search</a></li>
+    </ul>
+
+    <a href="index.html" class="brand">Resealed Clothes</a>
+
+    <ul>
+      <li><a href="productos.html">Productos</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== SECCIÓN PRINCIPAL (video de fondo) ===== -->
+  <section class="seccion-principal">
+    <video autoplay muted loop class="video-fondo">
+      <source src="src/adidas.mp4" type="video/mp4">
+    </video>
+    <div class="contenido-principal">
+      <h1>La ropa que te define</h1>
+      <p>Marcas exclusivas. Estilo sin límites.</p>
+      <button class="boton-principal">Ver colección</button>
+    </div>
+  </section>
+
+  <!-- ===== PRODUCTOS ===== -->
+  <section class="seccion-productos">
+    <h1>Productos</h1>
+
+    <div class="grid-productos">
+
+      <div class="card-producto">
+        <img src="src/cow og.jpg" alt="Adidas Samba OG">
+        <div class="card-producto-info">
+          <h2>Adidas Samba OG</h2>
+          <p>La última versión de los emblemáticos tenis adidas Samba OG está aquí para robarse la atención.</p>
+          <span class="precio">$380.000</span>
+          <button class="boton-secundario">Ver más</button>
+        </div>
+      </div>
+
+      <div class="card-producto">
+        <img src="src/jordan4.jpg" alt="Air Jordan Retro 4">
+        <div class="card-producto-info">
+          <h2>Air Jordan Retro 4</h2>
+          <p>Estilo espectacular, herencia icónica. Diseño llamativo que actualiza una de las siluetas más queridas de Jordan.</p>
+          <span class="precio">$620.000</span>
+          <button class="boton-secundario">Ver más</button>
+        </div>
+      </div>
+
+      <div class="card-producto">
+        <img src="src/forum2000.jpg" alt="Forum 2000 BZRP">
+        <div class="card-producto-info">
+          <h2>Forum 2000 BZRP</h2>
+          <p>Los Tenis FORUM2000 BZRP son una celebración del estilo y la colaboración.</p>
+          <span class="precio">$450.000</span>
+          <button class="boton-secundario">Ver más</button>
+        </div>
+      </div>
+
+      <div class="card-producto">
+        <img src="src/1.jpg" alt="Air Jordan Retro 1">
+        <div class="card-producto-info">
+          <h2>Air Jordan Retro 1</h2>
+          <p>Legendaria silueta de Jordan en su primer contrato con Nike.</p>
+          <span class="precio">$550.000</span>
+          <button class="boton-secundario">Ver más</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  
+  <section class="seccion-caracteristicas">
+    <h2>Identidad de marca</h2>
+    <p>Lo que nos hace diferentes</p>
+
+    <div class="contenedor-tarjetas">
+      <div class="tarjeta">
+        <h3>Nuestro estilo</h3>
+        <p>Buscamos traer el estilo que le gusta y que identifica a nuestra gente.</p>
+      </div>
+      <div class="tarjeta">
+        <h3>Prendas</h3>
+        <p>Traemos la mejor ropa de las mejores marcas a Colombia — desde Chinese Jacket, Adidas y lanzamientos exclusivos.</p>
+      </div>
+      <div class="tarjeta">
+        <h3>Servicio</h3>
+        <p>Atención personalizada y mantenimiento general para que tu ropa siempre luzca impecable.</p>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <h2>derechos reservados wilmar gallo</h2>
+  </footer>
+
+  <!-- ===== SCRIPT NAVBAR ===== -->
+  <script>
+    var lastScrollTop = 0;
+    var navbar = document.getElementById("navbar");
+
+    window.addEventListener("scroll", function () {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (scrollTop > lastScrollTop) {
+        navbar.style.top = "-90px"; /* oculta al bajar */
+      } else {
+        navbar.style.top = "0";     /* muestra al subir */
+      }
+
+      if (scrollTop === 0) {
+        navbar.classList.remove("scrolled");
+      } else {
+        navbar.classList.add("scrolled");
+      }
+
+      lastScrollTop = scrollTop;
+    });
+  </script>
+
+</body>
+</html>
