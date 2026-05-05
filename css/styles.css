@@ -1,0 +1,405 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Jost:wght@300;400;500;600&display=swap');
+
+/* ===== VARIABLES DE COLOR ===== */
+:root {
+  --fondo:        #f9f9f7;   
+  --blanco:       #ffffff;   
+  --negro:        #111110;   
+  --gris-claro:   #f2f2f0;   
+  --borde:        #e0e0dc;  
+  --texto-suave:  #999997;   
+  --texto-medio:  #444442;   /* gris oscuro para párrafos */
+}
+
+
+/* ===== RESET Y BASE ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  color: var(--negro);
+  background: var(--fondo);
+  padding-top: 90px; /* para que el navbar fijo no tape el contenido */
+}
+
+
+/* ===== NAVBAR ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 90px;
+  background: transparent;
+  padding: 0 60px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.4s ease;
+  z-index: 1000;
+}
+
+/* navbar al hacer scroll o al pasar el mouse */
+.navbar:hover,
+.navbar.scrolled {
+  background: var(--blanco);
+  border-bottom: 1px solid var(--borde);
+}
+
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  gap: 4px;
+}
+
+.navbar ul li a,
+.navbar i.fa-bars,
+.navbar i.fa-magnifying-glass {
+  font-family: 'Jost', sans-serif;
+  color: white;
+  padding: 0 12px;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+/* al hacer scroll los links se vuelven negros */
+.navbar:hover ul li a,
+.navbar.scrolled ul li a,
+.navbar:hover i,
+.navbar.scrolled i {
+  color: var(--negro);
+}
+
+.navbar .brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.navbar:hover .brand,
+.navbar.scrolled .brand {
+  color: var(--negro);
+}
+
+/* ocultar texto "Menu" y "Search" en desktop */
+.nav-hid {
+  display: none;
+}
+
+
+/* ===== SECCIÓN PRINCIPAL (video de fondo) ===== */
+.seccion-principal {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.video-fondo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* capa oscura encima del video para que el texto se lea */
+.seccion-principal::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 0;
+}
+
+.contenido-principal {
+  max-width: 700px;
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+
+.contenido-principal h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 64px;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+
+.contenido-principal p {
+  font-size: 16px;
+  letter-spacing: 0.06em;
+  margin-bottom: 36px;
+  color: rgba(255,255,255,0.85);
+}
+
+
+/* ===== BOTONES ===== */
+
+/* botón principal — negro sólido */
+.boton-principal {
+  background: var(--negro);
+  color: white;
+  border: 1px solid var(--negro);
+  padding: 14px 32px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Jost', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: all 0.25s;
+}
+
+.boton-principal:hover {
+  background: transparent;
+  color: var(--negro);
+}
+
+/* botón secundario — contorno negro */
+.boton-secundario {
+  background: transparent;
+  color: var(--negro);
+  border: 1px solid var(--negro);
+  padding: 12px 28px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: all 0.25s;
+}
+
+.boton-secundario:hover {
+  background: var(--negro);
+  color: white;
+}
+
+
+/* ===== SECCIÓN CARACTERÍSTICAS  ===== */
+.seccion-caracteristicas {
+  padding: 100px 60px;
+  text-align: center;
+  background: var(--blanco);
+}
+
+.seccion-caracteristicas h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 38px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  margin-bottom: 14px;
+}
+
+.seccion-caracteristicas > p,
+.seccion-caracteristicas > p3 {
+  color: var(--texto-suave);
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  margin-bottom: 60px;
+  display: block;
+}
+
+.contenedor-tarjetas {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+/* tarjetas de características */
+.tarjeta {
+  width: 280px;
+  padding: 36px 28px;
+  background: var(--gris-claro);
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
+
+.tarjeta h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+
+.tarjeta p,
+.tarjeta p3 {
+  font-size: 13px;
+  color: var(--texto-medio);
+  line-height: 1.7;
+}
+
+
+/* ===== SECCIÓN PRODUCTOS ===== */
+.seccion-productos {
+  padding: 100px 60px;
+  background: var(--fondo);
+}
+
+.seccion-productos h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 38px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+/* línea decorativa bajo el título */
+.seccion-productos h1::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--negro);
+  margin: 16px auto 60px;
+}
+
+.grid-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+/* ── TARJETA DE PRODUCTO  ── */
+.card-producto {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-producto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.10);
+}
+
+/* imagen grande — ocupa todo el ancho */
+.card-producto img {
+  width: 100%;
+  aspect-ratio: 1 / 1;        
+  object-fit: cover;
+  background: var(--gris-claro);
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.card-producto:hover img {
+  transform: scale(1.04);     /* zoom suave al pasar el mouse */
+}
+
+/* info de la tarjeta */
+.card-producto-info {
+  padding: 18px 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.card-producto h2 {
+  font-family: 'Jost', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--negro);
+}
+
+.card-producto p {
+  font-size: 12px;
+  color: var(--texto-suave);
+  line-height: 1.6;
+  flex: 1;
+}
+
+/* precio */
+.card-producto .precio {
+  font-family: 'Jost', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--negro);
+  margin-top: 4px;
+}
+
+.card-producto .boton-secundario {
+  margin-top: 14px;
+  width: 100%;
+  text-align: center;
+}
+
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--negro);
+  color: rgba(255,255,255,0.5);
+  text-align: center;
+  padding: 28px 20px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 24px;
+  }
+
+  .seccion-principal h1 {
+    font-size: 40px;
+  }
+
+  .seccion-caracteristicas,
+  .seccion-productos {
+    padding: 60px 24px;
+  }
+
+  .grid-productos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-productos {
+    grid-template-columns: 1fr;
+  }
+}
